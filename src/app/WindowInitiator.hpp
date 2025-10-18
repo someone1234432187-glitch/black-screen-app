@@ -3,8 +3,7 @@
 
 class WindowInitiator {
 public:
-    static void createWindow(); // Creates the full-screen black window
+    static void createWindow();
 };
 
-#endif // WINDOWINITIATOR_HPP
-
+#endif //WINDOWINITIATOR_HPP
