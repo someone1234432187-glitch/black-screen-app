@@ -1,0 +1,32 @@
+name: Build Screen App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Build with MSBuild
+      run: msbuild YourProject.sln /p:Configuration=Release
+
+    # OR, using g++ if you have a single-file style build
+    - name: Build with g++
+      shell: cmd
+      run: g++ main.cpp WindowInitiator.cpp ColorHandler.cpp -o Screen.exe -mwindows
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ScreenApp
+        path: Screen.exe
