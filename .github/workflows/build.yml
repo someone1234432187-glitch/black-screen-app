@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
@@ -22,11 +22,3 @@ jobs:
 
     # OR, using g++ if you have a single-file style build
     - name: Build with g++
-      shell: cmd
-      run: g++ main.cpp WindowInitiator.cpp ColorHandler.cpp -o Screen.exe -mwindows
-
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: ScreenApp
-        path: Screen.exe
