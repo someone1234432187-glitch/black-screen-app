@@ -4,7 +4,7 @@
 LRESULT CALLBACK HandleWindowMessages(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 void WindowInitiator::createWindow() {
-    const char* windowTitle = "My Custom Black Window"; // <-- Change your window title here
+    const char* windowTitle = "Screen"; // <-- Changed window title
     const char* className = "BlackWindowClass";
 
     WNDCLASS wc = {};
