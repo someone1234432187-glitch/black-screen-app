@@ -11,14 +11,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    # Step 1: Get your repo files
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
-
-    - name: Build with MSBuild
-      run: msbuild YourProject.sln /p:Configuration=Release
-
-    # OR, using g++ if you have a single-file style build
+    # Step 2: Build the C++ project with g++
     - name: Build with g++
+      shell: cmd
+      run: g++ main.cpp WindowInitiator.cpp ColorHandler.cpp -o Screen.exe -mwindows
+
+    # Step 3: Upload the compiled .exe as an artifact
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ScreenApp
+        path: Screen.exe
