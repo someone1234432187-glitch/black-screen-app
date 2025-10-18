@@ -1,8 +1,7 @@
-//
-// Created by spoil on 04/27/2024.
-//
-
 #include "ColorHandler.hpp"
+#include <string>
+#include <tuple>
+#include <unordered_map>
 
 std::unordered_map<std::string, std::string> ColorHandler::colorMap = {
     {"blue", "#0000FF"},
