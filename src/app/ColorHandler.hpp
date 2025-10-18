@@ -1,7 +1,3 @@
-//
-// Created by spoil on 04/27/2024.
-//
-
 #ifndef COLORHANDLER_HPP
 #define COLORHANDLER_HPP
 
@@ -15,6 +11,5 @@ public:
 
     static std::tuple<int, int, int> convertHextoRGB(std::string& hexCode);
 };
-
 
 #endif //COLORHANDLER_HPP
